@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block link %}
+    <link href="//cdn.bootcss.com/bootstrap-markdown/2.10.0/css/bootstrap-markdown.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/default.min.css" rel="stylesheet">
+    <link href="/static/css/markdown.css">
+{% endblock %}
+{% block content %}
+    <div id="tf-services">
+        <div class="container" ng-controller="blogCtrl">
+            <div class="title col-md-12">
+                <h2><span>something important</span><br />- blog -</h2>
+            </div>
+            <form>
+                <div class="col-md-8 col-md-offset-2">
+                    <span class="metas">{$ date $}</span>
+                    <h3 class="title">
+                        <span>title</span>
+                        <input class="form-control" type="text" ng-model="title" />
+                    </h3>
+                    <button class="btn btn-default" type="button" ng-click="click()">上传图片</button>
+                    <input type="file" id="upload-button" nv-file-select  multiple accept="image/*" uploader="uploader">
+                    <div class="blog-upload-img">
+                        <table class="table">
+                            <tr>
+                                <th>name</th>
+                                <th>size</th>
+                                <th>progress</th>
+                                <th>actions</th>
+                            </tr>
+                            <tr ng-repeat="item in queue">
+                                <td>
+                                    <span ng-bind="item._file.name"></span>
+                                    <div ng-thumb="{file: item._file, height: 100}"></div>
+                                </td>
+                                <td ng-bind="item._file.size"></td>
+                                <td><div class="progress">
+                                    <div class="progress-bar progress-bar-success" ng-style="progress_style(item)" ng-bind="item.progress"></div>
+                                </div></td>
+                                <td>
+                                    <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload">upload</span>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.cancel()">
+                                        <span class="glyphicon glyphicon-trash">remove</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="blog-single-img">
+                        <div class="item"><img ng-src="{$image$}"></div>
+                    </div>
+                    <textarea class="form-control" rows="30" id="md-textarea"></textarea>
+                </div>
+                <div class="title col-md-12">
+                    <h2>
+                        <a class="btn btn-default header-button" ng-click=submit()>submit</a>
+                        <a class="btn btn-danger danger-button" ng-click=cancel()>cancel</a>
+                    </h2>
+                </div>
+            </form>
+            <div class="title col-md-12">
+                <h2><span>written in markdown</span></h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+    <script src="//cdn.bootcss.com/markdown-it/7.0.0/markdown-it.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
+    <script src="/static/js/controllers/blog.js"></script>
+{% endblock %}

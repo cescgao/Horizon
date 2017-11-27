@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block link %}
+    <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/default.min.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div id="tf-services">
+        <div class="container" ng-controller="blogCtrl">
+            <div class="title col-md-12">
+                <h2><span>something important</span><br />- blog -</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <span class="metas">{$ date $}</span>
+                <h3>{$ title $}</h3>
+                <div class="blog-single-img">
+                    <div class="item"><img ng-src="{$ image $}"></div>
+                </div>
+                <div class="preview" ng-bind-html="desc"></div>
+            </div>
+            <div class="title col-md-12">
+                <h2><span>written in markdown</span></h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+    <script src="//cdn.bootcss.com/markdown-it/7.0.0/markdown-it.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap-markdown/2.10.0/js/bootstrap-markdown.js"></script>
+    <script src="/static/js/controllers/blog.js"></script>
+{% endblock %}

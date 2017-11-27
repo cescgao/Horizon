@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>{% block title %}Horizon{% endblock %}</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="http://image.cescgao.top/home/ico.ico" type="image/png">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    {% block link %}{% endblock %}
+    <link href="/static/css/global.css" rel="stylesheet">
+    <link href="/static/css/sweet-alert.css" rel="stylesheet">
+    <link href="/static/css/scrollTop.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular-animate.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular-sanitize.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-ui-bootstrap/1.1.2/ui-bootstrap-tpls.min.js"></script>
+    <script src="/static/js/sweet-alert.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-file-upload/2.3.4/angular-file-upload.min.js"></script>
+    <script src="/static/js/scrollTop.js"></script>
+    <script src="/static/js/common.js"></script>
+</head>
+<body ng-app="horizonApp">
+    <div id="loading">
+        <div id="loading-center-absolute">
+            <div id="object"></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="/">Horizon</a>
+                    </div>
+                    <div class="navbar-right">
+                        <i class="fa fa-qrcode fa-3x"></i>
+                        <div class="qrcode">
+                            <img src="http://image.cescgao.top/home/qrcode.jpg">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="row">
+            <div class="footer text-center">
+                <ul class="list-inline social-media">
+                    <li><a href="http://weibo.com/u/3045648951?is_all=1" target="_blank"><i class="fa fa-weibo"></i></a></li>
+                    <li><a href="http://www.renren.com/318132154/profile" target="_blank"><i class="fa fa-renren"></i></a></li>
+                    <li><a href="https://cn.linkedin.com/in/原-高-242b6491" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/cescgao" target="_blank"><i class="fa fa-github"></i></a></li>
+                </ul>
+                <p class="copyright"><i class="fa fa-copyright"></i> 2016 cescgao</p>
+                <p>京ICP备 15060812 号</p>
+            </div>
+        </div>
+    </div>
+    <div class="scrollTop_top">
+        <i class="fa fa-angle-double-up fa-4x"></i>
+    </div>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% block link %}
+    <link href="/static/css/responsive.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="animsition">
+        <div id="tf-page-header">
+            <div class="col-md-12 header-text text-center">
+                <img class="header-profile" src="http://image.cescgao.top/home/head.jpg">
+                <h1>I'm 高原</h1>
+                <p>生活不止眼前的苟且，还有诗和远方</p>
+                <a href="#about" class="btn btn-default header-button" onclick="$scrollClick()">
+                    enter profile<i class="fa fa-angle-down"></i>
+                </a>
+            </div>
+        </div>
+        <div id="about">
+            <div class="title col-md-12">
+                <h2><span>who i am</span><br />- about me -</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 aboutme-title text-center bgg">
+                        <h4>- my story -</h4>
+                        <p class="introduction">爱宅也爱奔跑，爱coding也爱诗书。</p>
+                        <p class="introduction">弱冠前自诩文青翘楚，常堆砌词藻以媚众，弄文字机巧以自娱。既加冠，方知天高地广，心远即安。</p>
+                        <p class="introduction">今有客机折戟埃及，又见平民血溅巴黎。或粪土贪官污吏，或争育末世遗文。置身于华灯璀璨，唯朝而往、暮而归，不知山林之乐也。</p>
+                        <p class="introduction">然创业未半，任重道远。既有俯拾六便士的身处苟且，也有仰望月亮的心向远方。前路漫漫，唯不忘初心，莫言悔恨。</p>
+                    </div>
+                    <div class="col-md-4 aboutme-title">
+                        <h4>- my profile -</h4>
+                        <h5>Complete Name: <span>Gao Yuan</span></h5>
+                        <h5>Birthday: <span>Apr.17 1991</span></h5>
+                        <h5>E-mail: <span>cescgao@qq.com</span></h5>
+                        <h5>Website: <span>www.cescgao.top</span></h5>
+                        <h5>QQ: <span>188492872</span></h5>
+                    </div>
+                    <div class="col-md-4 aboutme-title">
+                        <h4>- my skill -</h4>
+                        <p>
+                            <i class="fa fa-server"></i><span>linux</span>
+                            <i class="fa fa-server"></i><span>nginx</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-file-text-o"></i><span>python</span>
+                            <i class="fa fa-file-text-o"></i><span>shell</span>
+                            <i class="fa fa-file-text-o"></i><span>javascript</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-folder-o"></i><span>django</span>
+                            <i class="fa fa-folder-o"></i><span>tornado</span>
+                            <i class="fa fa-folder-o"></i><span>angularjs</span>
+                        </p>
+                        <p>
+                            <i class="fa fa-database"></i><span>mysql</span>
+                            <i class="fa fa-database"></i><span>redis</span>
+                            <i class="fa fa-database"></i><span>mongo</span>
+                        </p>
+                    </div>
+                    <div class="col-md-4 aboutme-title">
+                        <h4>- milestones -</h4>
+                        <div class="col-md-6"><div class="stats-wrap">
+                            <i class="fa fa-clock-o"></i><span class="counter">10000+</span>
+                            <div>Hours of Works</div>
+                        </div></div>
+                        <div class="col-md-6"><div class="stats-wrap">
+                            <i class="fa fa-edit"></i><span class="counter">500000+</span>
+                            <div>Lines of code</div>
+                        </div></div>
+                        <div class="col-md-6"><div class="stats-wrap">
+                            <i class="fa fa-line-chart"><span class="counter">20+</span></i>
+                            <div>Projects develop</div>
+                        </div></div>
+                        <div class="col-md-6"><div class="stats-wrap">
+                            <i class="fa fa-building"><span class="counter">3</span></i>
+                            <div>Companies deployed</div>
+                        </div></div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <a href="#resume" class="btn btn-default header-button">
+                        enter resume<i class="fa fa-angle-down"></i>
+                    </a>
+                    <a href="/static/resume.pdf" class="btn btn-default action-button" target="_blank">
+                        read more<i class="fa fa-mail-forward"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="resume">
+            <div class="title col-md-12">
+                <h2><span>about my past</span><br />- resume -</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 resume-title">
+                        <h4>- education -</h4>
+                    </div>
+                    <div class="col-md-4"><div class="media service">
+                        <div class="media-left"><i class="fa fa-book"></i></div>
+                        <div class="media-body">
+                            <h4>Primary School <span>2003-2009</span></h4>
+                            <h5>@passed</h5>
+                            <p>河南省实验中学</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-4"><div class="media service">
+                        <div class="media-left"><i class="fa fa-book"></i></div>
+                        <div class="media-body">
+                            <h4>University <span>2009-2013</span></h4>
+                            <h5>@passed</h5>
+                            <p>武汉大学</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-12 resume-title">
+                        <h4>- employment -</h4>
+                    </div>
+                    <div class="col-md-4"><div class="media service">
+                        <div class="media-left"><i class="fa fa-briefcase"></i></div>
+                        <div class="media-body">
+                            <h4>Web Developer <span>2012-2013</span></h4>
+                            <h5>@sohu.com</h5>
+                            <p>搜狐武汉研发中心</p>
+                            <p>搜狐随身看 搜狐邮箱</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-4"><div class="media service">
+                        <div class="media-left"><i class="fa fa-briefcase"></i></div>
+                        <div class="media-body">
+                            <h4>Web Developer <span>2014</span></h4>
+                            <h5>@sina.com.cn</h5>
+                            <p>新浪</p>
+                            <p>基础监控</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-4"><div class="media service">
+                        <div class="media-left"><i class="fa fa-briefcase"></i></div>
+                        <div class="media-body">
+                            <h4>System Architect <span>2014-now</span></h4>
+                            <h5>@hexinedu.com</h5>
+                            <p>启明合心</p>
+                            <p>all</p>
+                        </div>
+                    </div></div>
+                </div>
+                <div class="row text-center">
+                    <a href="#services" class="btn btn-default header-button">
+                        enter services<i class="fa fa-angle-down"></i>
+                    </a>
+                    <a href="/static/resume.pdf" class="btn btn-default action-button" target="_blank">
+                        read more<i class="fa fa-mail-forward"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="services">
+            <div class="title col-md-12">
+                <h2><span>what can i do</span><br />- services -</h2>
+            </div>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-3"><div class="media service">
+                        <div class="media-heading">
+                            <div class="icon-block"><i class="fa fa-desktop"></i></div>
+                        </div>
+                        <div class="media-body">
+                            <h4>Web Development</h4>
+                            <p>API开发</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-3"><div class="media service">
+                        <div class="media-heading">
+                            <div class="icon-block"><i class="fa fa-database"></i></div>
+                        </div>
+                        <div class="media-body">
+                            <h4>DB Development</h4>
+                            <p>数据库开发</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-3"><div class="media service">
+                        <div class="media-heading">
+                            <div class="icon-block"><i class="fa fa-area-chart"></i></div>
+                        </div>
+                        <div class="media-body">
+                            <h4>Operation Development</h4>
+                            <p>运维</p>
+                        </div>
+                    </div></div>
+                    <div class="col-md-3"><div class="media service">
+                        <div class="media-heading">
+                            <div class="icon-block"><i class="fa fa-cubes"></i></div>
+                        </div>
+                        <div class="media-body">
+                            <h4>algorithm</h4>
+                            <p>算法</p>
+                        </div>
+                    </div></div>
+                </div>
+                <div class="row text-center">
+                    <a href="#contact" class="btn btn-default header-button">
+                        enter contact<i class="fa fa-angle-down"></i>
+                    </a>
+                    <a href="/project" class="btn btn-default action-button" target="_blank">
+                        samples<i class="fa fa-mail-forward"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="title col-md-12">
+                <h2><span>get in touch with me</span><br />- contact -</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <form id="contact-form" class="form" name="sendMessage" novalidate="">
+                                    <div class="form-group">
+                                        <input type="text" autocomplete="off" class="form-control" placeholder="Your Name" id="name">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" autocomplete="off" class="form-control" placeholder="Your Email" id="email">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" autocomplete="off" class="form-control" placeholder="Tell me something..." id="message">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <a class="btn btn-default form-btn" type="submit">Send Message <i class="fa fa-send-o"></i></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll">
+        <ul>
+            <li class="active"><a class="scroll" href="#tf-page-header"><span class="title">top</span><span class="dot"></span></a></li>
+            <li><a class="scroll" href="#about"><span class="title">about</span><span class="dot"></span></a></li>
+            <li><a class="scroll" href="#resume"><span class="title">resume</span><span class="dot"></span></a></li>
+            <li><a class="scroll" href="#services"><span class="title">services</span><span class="dot"></span></a></li>
+            <li><a class="scroll" href="#contact"><span class="title">contact</span><span class="dot"></span></a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="//cdn.bootcss.com/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="/static/js/controllers/home.js"></script>
+{% endblock %}

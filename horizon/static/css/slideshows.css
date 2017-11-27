@@ -1,0 +1,55 @@
+.slideshow_wrapper {position: relative; width:100%; height:700px; margin:0 0 20px 0; overflow:hidden; }
+.slideshow_wrapper .slideshow {width:100%; height:100%; }
+	
+.slideshow_wrapper .slideshow_item {width:100%; height:100%; }
+.slideshow_wrapper .slideshow_item .data { display:none; }
+
+.slideshow_wrapper a.slideshow_prev { position:absolute; left:40px; top:50%; z-index:10; width:40px; height:46px; outline:none; background:url(/static/css/trans-black-70.png); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-box-shadow: 0 0 2px #222; -webkit-box-shadow: 0 0 2px #222; box-shadow: 0 0 2px #222;  }
+    .slideshow_wrapper a.slideshow_prev:hover { background:#000; }
+    .slideshow_wrapper a.slideshow_prev span { display:block; width:40px; height:46px; background:url(/static/css/arrows.png) no-repeat -55px 50%; text-indent:-9999px; }
+
+.slideshow_wrapper a.slideshow_next { position:absolute; right:40px; top:50%; z-index:10; width:40px; height:46px; outline:none; background:url(/static/css/trans-black-70.png); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-box-shadow: 0 0 2px #222; -webkit-box-shadow: 0 0 2px #222; box-shadow: 0 0 2px #222;  }
+    .slideshow_wrapper a.slideshow_next:hover { background:#000; }
+    .slideshow_wrapper a.slideshow_next span { display:block; width:40px; height:46px; background:url(/static/css/arrows.png) no-repeat -5px 50%; text-indent:-9999px; }
+
+.slideshow_wrapper .slideshow_paging { position:absolute; top:10px; right:10px; z-index:11; font-size:12px; padding:3px 2px; background:url(/static/css/trans-black-70.png); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; -moz-box-shadow: 0 0 2px #222; -webkit-box-shadow: 0 0 2px #222; box-shadow: 0 0 2px #222; }
+    .slideshow_wrapper .slideshow_paging a { display:block; float:left; margin:0 1px; padding:3px 7px; color:#ccc; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+        .slideshow_wrapper .slideshow_paging a:hover { color:#fff }
+        .slideshow_wrapper .slideshow_paging a.activeSlide { background:#eee; color:#222 }
+
+.slideshow_wrapper .slideshow_box { position:absolute; left:0; bottom:0; background:url(/static/css/trans-black-70.png); width:100%; height:180px; z-index:10;  }
+    .slideshow_wrapper .slideshow_box .data { padding:0 0; color:#ccc;  }
+    .slideshow_wrapper .slideshow_box .data h4 { color:#fff; font:bold 20px arial, sans-serif; padding:0; margin:0 0 10px 0; }
+    .slideshow_wrapper .slideshow_box .data p { padding:0; margin:0; line-height:140%;}
+    .slideshow_wrapper .slideshow_box .data a { color:#fff; }
+
+.slideshow_wrapper img {
+    width: 100%;
+    max-height: 700px;
+}
+
+.slideshow_wrapper .slideshow_center {
+    position: absolute; top: 50%; left: 50%; z-index: 100; font-size: 24px; color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.slideshow_wrapper .slideshow_center > a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    top: -50%;
+    left: -50%;
+}
+
+.slideshow_wrapper .slideshow_center > a:hover span {
+    color: #000;
+    background-color: #fff;
+}
+
+.slideshow_wrapper .slideshow_center span {
+    transition: all 0.25s ease;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 10px 40px 10px 40px;
+    color: #fff;
+}

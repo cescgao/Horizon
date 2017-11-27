@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block link %}
+    <link href="//cdn.bootcss.com/highlight.js/9.4.0/styles/default.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/timeline.css">
+{% endblock %}
+{% block content %}
+    <div id="tf-services">
+        <div class="container" ng-controller="axisCtrl">
+            <div class="row">
+                <div class="VivaTimeline">
+                    <dl>
+                        <div ng-repeat="p in points">
+                            <dt ng-if="p.type=='dt'">{$ p.date $}</dt>
+                            <dd ng-if="p.type=='dd' && p.right" class="pos-right clearfix">
+                                <div class="circ"></div>
+                                <div class="time">{$ p.date $}</div>
+                                <div class="events">
+                                    <div class="events-header" ng-bind="p.title"></div>
+                                    <div class="events-body">
+                                        <div class="row" ng-repeat="r in p.rows" title="{$ r.title $}">
+                                            <a href="/axis/blog/{$ r.id $}">
+                                            <div class="col-md-6 pull-left" ng-if="r.image">
+                                                <img class="events-object img-responsive img-rounded" ng-src="{$ r.image $}" />
+                                            </div>
+                                            <div class="events-desc" ng-bind-html="r.desc"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="events-footer"></div>
+                                </div>
+                            </dd>
+                            <dd ng-if="p.type=='dd' && p.left" class="pos-left clearfix">
+                                <div class="circ"></div>
+                                <div class="time">{$ p.date $}</div>
+                                <div class="events">
+                                    <div class="events-header" ng-bind="p.title"></div>
+                                    <div class="events-body">
+                                        <div class="row" ng-repeat="r in p.rows" title="{$ r.title $}">
+                                            <div class="col-md-6 pull-left" ng-if="r.image">
+                                                <img class="events-object img-responsive img-rounded" ng-src="{$ r.image $}"/>
+                                            </div>
+                                            <div class="events-desc" ng-bind-html="r.desc"></div>
+                                        </div>
+                                    </div>
+                                    <div class="events-footer"></div>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block scripts %}
+    <script src="//cdn.bootcss.com/highlight.js/9.4.0/highlight.min.js"></script>
+    <script src="/static/js/timeline.js"></script>
+    <script src="//cdn.bootcss.com/markdown-it/7.0.0/markdown-it.min.js"></script>
+    <script src="/static/js/controllers/axis.js"></script>
+{% endblock %}
