@@ -11,6 +11,7 @@ from .views import *
 
 patterns = [
     (r'^$', ProjectPage),
+    (r'^purify/?$', PurifyPage),
 ]
 
 

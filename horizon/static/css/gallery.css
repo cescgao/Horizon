@@ -294,7 +294,7 @@ Main Components
   visibility: visible;
   opacity: 1;
 }
-.cd-project-info p {
+.cd-project-info p, h1 {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;

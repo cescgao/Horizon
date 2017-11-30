@@ -23,7 +23,7 @@ class Login(ApiHandler):
     def get(self):
         client = PassportClient(passport_endpoint)
         user = client.get_info_by_code(self.input.auth_code)
-        Passport.login(self.request, user)
+        Passport.login(self, user)
         return user
 
 
@@ -31,7 +31,7 @@ class Logout(ApiHandler):
 
     @login_required
     def post(self):
-        Passport.logout(self.request)
+        Passport.logout(self)
 
     def get(self):
         return self.post()

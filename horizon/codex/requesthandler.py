@@ -115,7 +115,7 @@ class ViewHandler(BaseHandler):
             else:
                 return render(self.request, resp, content_type='text/html; charset=utf-8')
         except AuthError:
-            return HttpResponseRedirect(settings.login_url + '?redirect=' + self.request.get_raw_uri())
+            return HttpResponseRedirect(settings.login_url + '?redirect=' + url_quote(self.request.get_raw_uri()))
         except Exception, e:
             print traceback.format_exc()
             print e

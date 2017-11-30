@@ -7,8 +7,9 @@
 
 from codex import ModelHandler, utils
 from codex.exceptionhandler import AuthError
-from constants import cookie_expire
+from constants import cookie_expire, passport_endpoint
 from .models import *
+from passport import PassportClient
 
 
 class Passport(ModelHandler):
@@ -35,8 +36,8 @@ class Passport(ModelHandler):
         handler.delete_cookie += ['passport', 'signature']
 
     def verify(self):
-        if self.model.user_id and self.model.expire < utils.get_datetime_now():
-            raise AuthError('Expired')
+        # if self.model.user_id and self.model.expire < utils.get_datetime_now():
+        #     raise AuthError('Expired')
         return self.model.data
 
 
@@ -44,9 +45,14 @@ def login_required(func):
 
     def func_wrapper(cls, *_args, **_kwargs):
         access_token = cls.request.COOKIES.get('passport')
-        if not access_token:
+        if access_token:
+            token = Passport.get_by_query(access_token=access_token)
+        elif cls.input.auth_code:
+            client = PassportClient(passport_endpoint)
+            user = client.get_info_by_code(cls.input.auth_code)
+            token = Passport.login(cls, user)
+        else:
             raise AuthError('Invalid Identity')
-        token = Passport.get_by_query(access_token=access_token)
         cls.request.user = token.verify()
         cls.request.token = token
         return func(cls, *_args, **_kwargs)

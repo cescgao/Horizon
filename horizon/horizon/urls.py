@@ -18,5 +18,5 @@ urlpatterns = [
 urlpatterns += [
     url(r'^api/account/', include('sigma_account.backend_urls')),
     url(r'^api/home/', include('sigma_home.backend_urls')),
-    url(r'^api/projects/', include('sigma_project.backend_urls')),
+    url(r'^api/project/', include('sigma_project.backend_urls')),
 ]
